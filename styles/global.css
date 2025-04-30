@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'BalloonFont';
-  src: url('./fonts/BalloonFont.ttf') format('truetype');
+  src: url('../fonts/BalloonFont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -55,6 +55,12 @@ header {
   font-size: 30px;
 }
 
+/*styling stuff under nav bar*/
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 /*products*/
 #products {
