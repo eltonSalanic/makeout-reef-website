@@ -40,7 +40,7 @@ async function renderProducts() {
   );*/
 }
 
-renderProducts();
+/*renderProducts();*/
 
 
 //var elem = document.createElement("img");

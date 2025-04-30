@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'GoldBalloon';
+  src: url('../fonts/GoldBalloonFont.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -22,51 +29,4 @@ h4,
 p {
   padding: 0px;
   margin: 0px;
-}
-
-/*Header*/
-header {
-  background-color: rgb(79, 64, 105);
-  background-image: url(noise.svg);
-
-  width: 100%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#header-logo {
-  height: 170px;
-}
-
-#main-nav {
-  background-color: rgb(66, 57, 68);
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-#main-nav a {
-  font-family: 'BalloonFont';
-  color: white;
-  font-size: 30px;
-}
-
-/*styling stuff under nav bar*/
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/*products*/
-#products {
-  width: 100%;
-}
-
-.productImage {
-  width: 100%;
 }

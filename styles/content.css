@@ -1,8 +1,102 @@
 main {
   display: flex;
   flex-direction: column;
+  background-color: rgb(79, 64, 105);
+  background-image: url(../noise.svg);
+}
+
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
+
+h3 {
+  font-family: 'Special Elite';
+  font-size: 42px;
+}
+
+
+
+/*tour section*/
+#tour-dates {
+  display: flex;
+  flex-direction: row;
+
+  background-image: url(../images/crowd1.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  min-height: 800px;
+
+  position: relative;
+  /*to allow a background overlay*/
+}
+
+#tour-dates::before {
+  /*next two styles make the background overlay*/
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  /* black overlay at 50% opacity */
+  z-index: 1;
+}
+
+#tour-dates>* {
+  position: relative;
+  z-index: 2;
+  /* brings text/content above the overlay */
+}
+
+#tour-dates>div {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.tour-poster-container {
+  flex: 1;
+}
+
+.tour-poster-container img {
+  height: 100%;
+}
+
+.tour-dates-container {
+  flex: 1;
+  align-items: center;
+}
+
+.tour-dates-container>table {
+  text-align: center;
+  border-spacing: 0;
+
+  width: 100%;
+}
+
+.tour-dates-container th {
+  font-family: 'BalloonFont';
+  font-size: 26px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  text-shadow: 2px 2px 4px black;
+  background-color: rgb(79, 64, 105);
+}
+
+.tour-dates-container tr {
+  font-family: monospace;
+  color: rgb(204, 175, 225);
+  font-size: 18px;
+}
+
+
+/*music*/
 
 /*products*/
 #products {

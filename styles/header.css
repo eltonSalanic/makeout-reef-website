@@ -1,0 +1,26 @@
+/*Header*/
+header {
+  background-color: rgb(96, 80, 101);
+  /*background-image: url(../noise.svg);*/
+  background-image: url(../images/backgroundTexture.webp);
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+#header-logo {
+  height: 150px;
+}
+
+
+#main-nav a {
+  font-family: 'BalloonFont';
+  color: white;
+  font-size: 30px;
+  text-shadow: 2px 2px 4px black;
+}
