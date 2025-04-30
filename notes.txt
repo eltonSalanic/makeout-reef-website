@@ -1,0 +1,68 @@
+Muted Light Pink: (206, 183, 186)
+Deep Black: (14, 12, 13)
+Soft Beige: (169, 142, 137)
+Dark Brownish Black: (47, 37, 35)
+Grayish Pink: (179, 156, 161)
+
+Header Text
+"Pacifico" – a wavy, handwritten cursive font (but not too cheesy).
+"Shrikhand" – fat, retro feeling — kind of like old diner signs.
+"Bungee" – blocky and bold, feels like old surf contest posters.
+"Special Elite" – looks like a vintage typewriter that's a little worn-out.
+"Monoton" – super stylized, neon sign vibes if you want it to feel grungy glowy.
+
+Body Text
+"Fira Sans" – clean but still warm and a little rounded, easy to read.
+"Roboto Mono" – monospaced, like an old computer typewriter but smoother.
+"Karla" – simple and modern, but not sterile — still has some softness.
+"Cormorant Garamond" – if you want to look slightly "classic surf novel" style but still readable.
+
+Grain
+background-image: url('path-to-your-grain.png');
+background-size: cover; /* or 'contain' depending on your look */
+background-repeat: repeat;
+background-blend-mode: overlay; /* this is key for a soft, real feel */
+
+
+Links:
+-Spotify Embed
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/728YaMJauikKmE5dRQwkTO?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+-Apple Music
+https://geo.music.apple.com/us/album/_/1763001162?app=music&at=1000lHKX&ct=linktree_http&itscg=30200&itsct=lt_m&ls=1&mt=1
+
+-Youtube
+https://www.youtube.com/playlist?list=OLAK5uy_mH2tqA41xxdRolj1aWM3Xt9s8nsZDYTkI
+
+-Spotify
+https://open.spotify.com/album/728YaMJauikKmE5dRQwkTO?si=UepnY3MPRCGhgpgeOP1E2w&utm_medium=share&utm_source=linktree
+
+-Soundcloud
+https://soundcloud.com/makeout-reef/sets/star-power-831808267
+
+-Tidal
+https://listen.tidal.com/album/381137742
+
+-Youtube Music
+https://music.youtube.com/playlist?list=OLAK5uy_mH2tqA41xxdRolj1aWM3Xt9s8nsZDYTkI
+
+-Amazon Music
+https://music.amazon.com/albums/B0DD2DT5R5
+
+-Deezer
+https://www.deezer.com/album/629574401
+
+-Audiomack
+https://audiomack.com/album/makeout-reef/star-power-1
+
+-Pandora
+https://www.pandora.com/AL:38054007
+
+-Napster
+https://play.napster.com/album/alb.3071723596353376
+
+-iTunes
+https://geo.music.apple.com/us/album/_/1763001162?app=itunes&at=1000lHKX&ct=linktree_http&itscg=30200&itsct=lt_m&ls=1&mt=1
+
+Merch Link
+https://makeoutreef.bigcartel.com
