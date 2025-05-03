@@ -45,3 +45,11 @@ async function renderProducts() {
 
 //var elem = document.createElement("img");
 //elem.setAttribute("src", "images/hydrangeas.jpg");
+
+document.body.addEventListener('mousedown', () => {
+  document.body.classList.add('cursor-clicked');
+});
+
+document.body.addEventListener('mouseup', () => {
+  document.body.classList.remove('cursor-clicked');
+});

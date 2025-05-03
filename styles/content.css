@@ -1,22 +1,24 @@
 main {
   display: flex;
   flex-direction: column;
-  background-color: rgb(79, 64, 105);
-  background-image: url(../noise.svg);
+  background-color: rgb(82, 66, 89);
+  /*background-image: url(../noise.svg);*/
 }
 
 section {
   width: 100% - 60px;
   padding-left: 30px;
   padding-right: 30px;
-  padding-top: 30px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 h3 {
-  font-family: 'Rubik Burned';
+  font-family: 'BalloonFont';
+  /*font-family: 'Rubik Burned';*/
   font-size: 80px;
   color: rgb(136, 119, 148);
-  text-shadow: 8px 8px 10px black;
+  text-shadow: 2px 4px 10px black;
 }
 
 
@@ -104,10 +106,102 @@ h3 {
 }
 
 /*other show dates*/
-.shows {}
+#shows {
+  background-image: url(../images/backgroundTexture.webp);
+}
 
+/*#shows>.section-header-container {
+  display: flex;
+  justify-content: flex-end;
+}
+IF YOU DECIDE TO MOVE OTHER SHOW DATES TO LEFT  
+*/
+
+#shows-display-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#show-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+#show-container img {
+  box-shadow: 3px 3px 10px black;
+}
+
+#show-container h4 {
+  font-size: 20px;
+  font-family: monospace;
+  color: rgb(0, 0, 0);
+  text-shadow: 1px 1px 1px rgb(147, 133, 147);
+  margin-top: 10px;
+}
 
 /*music*/
+#music {
+  background-image: url(../images/balloonBackground.jpg);
+  background-size: contain;
+  position: relative;
+  /*to allow background overlay*/
+}
+
+#music::before {
+  /*this and next two styles make the background overlay*/
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  /* black overlay at 50% opacity */
+  z-index: 1;
+}
+
+#music>* {
+  position: relative;
+  z-index: 2;
+  /* brings text/content above the overlay */
+}
+
+#music-links-container {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#music-links-container nav {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#music-links-container nav>a {
+  /*defined a size for the boxes (a being treated as box) around the svg's so the flex stays consistent*/
+  width: 35px;
+  height: 35px;
+}
+
+#music-links-container svg {
+  fill: rgb(114, 83, 128);
+  transition: transform 0.2s ease, fill 0.2s ease;
+  height: 100%;
+}
+
+#music-links-container svg:hover {
+  fill: white;
+  transform: scale(1.1);
+  flex: 1.1;
+}
+
 
 /*products*/
 #products {

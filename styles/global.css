@@ -5,12 +5,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'GoldBalloon';
-  src: url('../fonts/GoldBalloonFont.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
 
 body {
   margin: 0;
