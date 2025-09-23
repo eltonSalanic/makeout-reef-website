@@ -202,12 +202,43 @@ IF YOU DECIDE TO MOVE OTHER SHOW DATES TO LEFT
   flex: 1.1;
 }
 
-
-/*products*/
-#products {
-  width: 100%;
+/*merch*/
+#merch {
+  height: 600px;
+  background-image: url(/images/backgroundTexture.webp);
 }
 
-.productImage {
-  width: 100%;
+#merch-display-container {
+  height: 80%;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
+
+.product-container {
+  height: 100%;
+}
+
+.product-container>img {
+  height: 100%;
+}
+
+/*merch display scrollbar*/
+#merch-display-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+#merch-display-container::-webkit-scrollbar-track {
+  background: #7a6a80;
+}
+
+#merch-display-container::-webkit-scrollbar-thumb {
+  background-color: #402248;
+  border-radius: 8px;
+}
+
+#merch-display-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* other links*/
