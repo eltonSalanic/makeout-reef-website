@@ -1,0 +1,158 @@
+main {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(82, 66, 89);
+}
+
+#show-dates {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url(../images/crowd1.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  min-height: 100vh;
+  padding: 100px 30px;
+
+  position: relative;
+  /*to allow a background overlay*/
+}
+
+#show-dates::before {
+  /*next two styles make the background overlay*/
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  /* darker grey overlay for better text readability */
+  z-index: 1;
+}
+
+#show-dates > * {
+  position: relative;
+  z-index: 2;
+  /* brings text/content above the overlay */
+}
+
+#show-dates h1 {
+  font-family: 'BalloonFont';
+  font-size: 100px;
+  color: white;
+  text-shadow: 3px 3px 8px black;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.shows-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.show-item {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 25px 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.show-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.show-date {
+  font-family: 'BalloonFont';
+  font-size: 36px;
+  color: rgb(136, 119, 148);
+  text-shadow: 2px 2px 4px black;
+  min-width: 120px;
+  text-align: center;
+  margin-right: 40px;
+}
+
+.show-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.show-city {
+  font-family: monospace;
+  font-size: 24px;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.show-venue {
+  font-family: monospace;
+  font-size: 18px;
+  color: rgb(200, 180, 210);
+  text-shadow: 1px 1px 2px black;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  #show-dates h1 {
+    font-size: 70px;
+    margin-bottom: 60px;
+  }
+  
+  .show-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .show-date {
+    margin-right: 0;
+    margin-bottom: 15px;
+    font-size: 28px;
+  }
+  
+  .show-city {
+    font-size: 20px;
+  }
+  
+  .show-venue {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #show-dates h1 {
+    font-size: 50px;
+    margin-bottom: 40px;
+  }
+  
+  .show-date {
+    font-size: 24px;
+  }
+  
+  .show-city {
+    font-size: 18px;
+  }
+  
+  .show-venue {
+    font-size: 14px;
+  }
+}
