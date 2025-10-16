@@ -3,4 +3,80 @@ body{
     background-repeat: repeat;
     background-blend-mode: overlay;
     background-color: #593c56;
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-logo {
+    width: 80%;
+    height: auto;
+}
+
+.home-latest-release > h2 {
+    font-family: 'Rubik Burned', cursive;
+    color: #fff;
+}
+
+.home-latest-release > img{
+    box-shadow: #1e1e1d 6px 6px;
+    margin-bottom: 10px;
+}
+
+
+
+.home-main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.home-nav > a{
+    background-image: url('../assets/textures/backgroundTexture.webp');
+    background-blend-mode: overlay;
+    background-color: #212121;
+
+    font-family: 'BBH Sans Bogle', sans-serif;
+    font-size: 64px;
+    color: #593c56;
+
+    padding: 2px 7px;
+}
+
+.home-nav a:nth-child(even){
+    display: inline-block;
+    transform: rotate(5deg) !important;
+}
+
+
+
+.home-latest-release {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-latest-release > h2{
+    font-size: 36px;
+}
+
+.home-logo-menu-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-logo-menu-container > img{
+    margin-bottom: 150px;
+    rotate: -10deg;
 }

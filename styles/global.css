@@ -2,3 +2,8 @@
     margin: 0;
     padding: 0;
 }
+
+a:link, a:visited {    /* normal link color */
+    color: inherit;
+    text-decoration: none; /* optional */
+  }
