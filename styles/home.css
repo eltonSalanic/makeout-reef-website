@@ -1,0 +1,6 @@
+body{
+    background-image: url('../assets/textures/backgroundTexture.webp');
+    background-repeat: repeat;
+    background-blend-mode: overlay;
+    background-color: #593c56;
+}
