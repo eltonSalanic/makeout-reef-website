@@ -25,6 +25,7 @@ body::before {
 
 .home-main-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -41,6 +42,7 @@ body::before {
 
 .home-latest-release-container > h2 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
     color: #fff;
     text-shadow: 3px 3px 5px rgba(243, 79, 255, 0.5);
 }
@@ -55,22 +57,22 @@ body::before {
 }
 
 
-.home-logo {
-    width: 70%;
-    height: auto;
-}
-
 .home-logo-menu-container {
     flex: 6;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .home-logo-menu-container > img{
-    margin-bottom: 150px;
-    rotate: -10deg;
+    margin-bottom: 30px;
     filter: drop-shadow(0 0 2px rgba(218, 203, 222, 0.6));
+}
+
+.home-logo {
+    width: 50%;
+    height: auto;
 }
 
 .home-nav{
