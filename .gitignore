@@ -1,1 +1,40 @@
-.DS_store
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Node stuff (if you ever use npm or live-server)
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+
+# Build and cache
+dist/
+build/
+.cache/
+.tmp/
+
+# Editor / IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment / local configs
+.env
+.env.local
+.env.*
+*.local
+
+# Logs
+*.log
+logs/
+
+# Deployment artifacts
+*.zip
+*.tar
+*.gz
+
+# Misc
+coverage/
