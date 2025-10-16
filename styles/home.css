@@ -10,27 +10,50 @@ body{
     align-items: center;
 }
 
+.home-main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.home-latest-release-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-latest-release-container > h2 {
+    font-family: 'Rubik Burned', cursive;
+    color: #fff;
+}
+
+.home-latest-release-container > img{
+    box-shadow: #1e1e1d 6px 6px;
+    margin-bottom: 10px;
+}
+
+.home-latest-release-container > h2{
+    font-size: 36px;
+}
+
+
 .home-logo {
     width: 80%;
     height: auto;
 }
 
-.home-latest-release > h2 {
-    font-family: 'Rubik Burned', cursive;
-    color: #fff;
-}
-
-.home-latest-release > img{
-    box-shadow: #1e1e1d 6px 6px;
-    margin-bottom: 10px;
-}
-
-
-
-.home-main-container {
+.home-logo-menu-container {
+    flex: 1;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+}
+
+.home-logo-menu-container > img{
+    margin-bottom: 150px;
+    rotate: -10deg;
 }
 
 .home-nav{
@@ -54,29 +77,4 @@ body{
 .home-nav a:nth-child(even){
     display: inline-block;
     transform: rotate(5deg) !important;
-}
-
-
-
-.home-latest-release {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.home-latest-release > h2{
-    font-size: 36px;
-}
-
-.home-logo-menu-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.home-logo-menu-container > img{
-    margin-bottom: 150px;
-    rotate: -10deg;
 }
