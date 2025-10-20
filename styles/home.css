@@ -1,0 +1,117 @@
+body{
+    background-image: url('../assets/StarPowerArtwork.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-color: #593c56;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/*Gray Overlay For Background */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.home-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+
+.home-latest-release-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.spotify-embed{
+    width: 50%;
+}
+
+.home-latest-release-text-container > h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 52px;
+    
+    color: #fff;
+    text-shadow: 3px 3px 5px rgb(146, 93, 150);
+}
+
+.home-latest-release-text-container > p {
+    font-family: 'Rubik Burned', cursive;
+    font-size: 24px;
+    color: #764c30;
+}
+
+.home-latest-release-container > img{
+    box-shadow: #1e1e1d 8px 8px, 0 0 20px rgba(158, 98, 171, 0.5);
+    margin-bottom: 10px;
+}
+
+.home-latest-release-container > h2{
+    font-size: 36px;
+}
+
+
+.home-logo-menu-container {
+    flex: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.home-logo-menu-container > img{
+    margin-bottom: 30px;
+    filter: drop-shadow(0 0 2px rgba(218, 203, 222, 0.6));
+}
+
+.home-logo {
+    width: 50%;
+    height: auto;
+}
+
+.home-nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.home-nav > a{
+    background-color: #060606;
+
+    font-family: 'Rubik Burned', cursive;
+    font-size: 50px;
+    color: #764c30;
+
+    padding: 2px 7px;
+    box-shadow: 0 0 15px rgba(154, 120, 151, 0.4);
+    transition: all 0.3s ease;
+}
+
+.home-nav > a:hover {
+    text-shadow: 0 0 15px rgba(154, 120, 151, 1);
+    box-shadow: 0 0 25px rgba(154, 120, 151, 0.8);
+    transform: scale(1.05);
+}
+
+.home-nav a:nth-child(even){
+    display: inline-block;
+    transform: rotate(5deg) !important;
+}
