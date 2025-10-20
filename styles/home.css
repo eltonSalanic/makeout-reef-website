@@ -4,7 +4,6 @@ body{
     background-position: center;
     background-color: #593c56;
 
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,17 +33,31 @@ body::before {
 
 
 .home-latest-release-container {
-    flex: 5;
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
+    margin-top: 25px;
 }
 
-.home-latest-release-container > h2 {
+.spotify-embed{
+    width: 50%;
+}
+
+.home-latest-release-text-container > h2 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 52px;
     
     color: #fff;
-    text-shadow: 3px 3px 5px rgba(243, 79, 255, 0.5);
+    text-shadow: 3px 3px 5px rgb(146, 93, 150);
+}
+
+.home-latest-release-text-container > p {
+    font-family: 'Rubik Burned', cursive;
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 3px 3px 5px rgb(146, 93, 150);
 }
 
 .home-latest-release-container > img{

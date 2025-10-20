@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/global.css" rel="stylesheet">
     <link href="styles/home.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="assets/FlowerFavicon.PNG">
+    <link rel="icon" type="image/png" href="assets/FlowerFavicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,8 +30,11 @@
             </nav>
         </div>
         <div class="home-latest-release-container">
-            <img src="assets/WallflowerArtwork.PNG" alt="wallflower artwork" class="home-artwork" height="300px">
-            <h2>latest release</h2>
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/4NYeFLdZrMlN2I01mzbZgU?utm_source=generator&theme=0" height="352px" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" class="spotify-embed"></iframe>
+            <div class="home-latest-release-text-container">
+                <h2>"Wallflower"</h2>
+                <p>latest release</p>
+            </div>
         </div>
     </div>
 </body>
