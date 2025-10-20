@@ -56,8 +56,7 @@ body::before {
 .home-latest-release-text-container > p {
     font-family: 'Rubik Burned', cursive;
     font-size: 24px;
-    color: #fff;
-    text-shadow: 3px 3px 5px rgb(146, 93, 150);
+    color: #764c30;
 }
 
 .home-latest-release-container > img{
@@ -95,11 +94,11 @@ body::before {
 }
 
 .home-nav > a{
-    background-color: #212121;
+    background-color: #060606;
 
     font-family: 'Rubik Burned', cursive;
     font-size: 50px;
-    color: #9a7897;
+    color: #764c30;
 
     padding: 2px 7px;
     box-shadow: 0 0 15px rgba(154, 120, 151, 0.4);
