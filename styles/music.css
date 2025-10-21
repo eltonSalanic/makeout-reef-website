@@ -130,6 +130,15 @@ body::before {
     fill: white;
 }
 
+.music-links-container a:hover{
+    transform: scale(1.10);
+}
+
+.music-links-container svg:hover{
+    fill: rgb(117, 64, 117);
+    transition: all .3s ease;
+}
+
 @media (max-width: 680px){
     .music-nav { gap: 16px; }
     .music-nav > a { font-size: 24px; }
