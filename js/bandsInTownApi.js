@@ -4,7 +4,7 @@ async function getShowsData() {
     })
     
     try {
-      const response = await fetch('https://rest.bandsintown.com/artists/makeoutreef/events?${parameters}');
+      const response = await fetch(`https://rest.bandsintown.com/artists/makeoutreef/events?${parameters}`);
       if (!response.ok) throw new Error('Network response was not ok');
       const data = await response.json();
       console.log(data);
