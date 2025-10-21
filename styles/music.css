@@ -1,0 +1,137 @@
+body{
+    background-image: url('../assets/BalloonStageShot.jpg');
+    background-size: cover;
+    background-position: 0px -250px;
+    background-color: #593c56;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Gray Overlay For Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.music-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    gap: 20px;
+}
+
+.music-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.music-logo {
+    width: 220px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 6px rgba(218, 203, 222, 0.6));
+}
+
+.music-nav{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.music-nav > a{
+    background-color: #060606;
+
+    font-family: 'Rubik Burned', cursive;
+    font-size: 28px;
+    color: #764c30;
+
+    padding: 2px 10px;
+    box-shadow: 0 0 15px rgba(154, 120, 151, 0.4);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.music-nav > a:hover {
+    text-shadow: 0 0 15px rgba(154, 120, 151, 1);
+    box-shadow: 0 0 25px rgba(154, 120, 151, 0.8);
+    transform: scale(1.05);
+}
+
+.music-content {
+    width: min(950px, 92%);
+    background: rgba(6, 6, 6, 0.6);
+    border: 1px solid rgba(154, 120, 151, 0.4);
+    box-shadow: 0 0 20px rgba(154, 120, 151, 0.5);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    backdrop-filter: blur(2px);
+}
+
+.music-content h1{
+    margin: 0;
+    color: #fff;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 52px;
+    text-shadow: 3px 3px 5px rgb(146, 93, 150);
+    text-align: center;
+}
+
+.spotify-embed-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+}
+
+.spotify-embed-container iframe {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(154, 120, 151, 0.3);
+}
+
+.music-links-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 50%;
+}
+
+.music-links-container a{
+    width: 100%;
+    height: auto;
+}
+
+.music-links-container svg{
+    width: 100%;
+    height: auto;
+    fill: white;
+}
+
+@media (max-width: 680px){
+    .music-nav { gap: 16px; }
+    .music-nav > a { font-size: 24px; }
+    .music-content h1 { font-size: 42px; }
+}
