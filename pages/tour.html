@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../styles/global.css" rel="stylesheet">
     <link href="../styles/tour.css" rel="stylesheet">
+    <link href="../styles/header.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="../assets/FlowerFavicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,18 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="tour-header">
-        <a href="../index.html" aria-label="home">
-            <img src="../assets/FlowerLogo.png" alt="makeout reef logo" class="tour-logo">
-        </a>
-        <nav class="tour-nav">
-            <a href="../pages/tour.html">tour</a>
-            <a href="https://makeoutreef.bigcartel.com" target="_blank">merch</a>
-            <a href="../pages/music.html">music</a>
-            <a href="../pages/contact.html">contact</a>
-        </nav>
-    </div>
-
+    <header class="header"></header>
     <div class="tour-main-container">
         <div class="shows-window">
             <h1>shows</h1>
@@ -38,5 +28,13 @@
     </div>
     
     <script src="../js/bandsInTownApi.js"></script>
+    <!-- include header contents-->
+    <script>
+        fetch('../partials/header.html')
+            .then(res => res.text())
+            .then(htmlText =>{
+                document.querySelector('.header').innerHTML = htmlText;
+            })
+    </script>
 </body>
 </html>

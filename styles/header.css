@@ -1,0 +1,35 @@
+.header {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.header-logo {
+    width: 220px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 6px rgba(218, 203, 222, 0.6));
+}
+
+.header-nav{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.header-nav > a{
+    background-color: #060606;
+
+    font-family: 'Rubik Burned', cursive;
+    font-size: 28px;
+    color: #764c30;
+
+    padding: 2px 10px;
+    box-shadow: 0 0 15px rgba(154, 120, 151, 0.4);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
