@@ -11,6 +11,7 @@ body{
     align-items: center;
     position: relative;
     min-height: 100vh;
+
 }
 
 /* Gray Overlay For Background */
@@ -27,6 +28,8 @@ body::before {
 }
 
 .contact-main-container {
+    flex: 1;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,7 +37,6 @@ body::before {
     position: relative;
     z-index: 2;
     width: 100%;
-    height: 100vh;
     gap: 20px;
 }
 
