@@ -33,3 +33,9 @@
     transition: all 0.3s ease;
     text-decoration: none;
 }
+
+.header-nav > a:hover {
+    text-shadow: 0 0 15px rgba(154, 120, 151, 1);
+    box-shadow: 0 0 25px rgba(154, 120, 151, 0.8);
+    transform: scale(1.05);
+}
