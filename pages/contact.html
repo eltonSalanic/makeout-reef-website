@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../styles/global.css" rel="stylesheet">
     <link href="../styles/contact.css" rel="stylesheet">
+    <link href="../styles/header.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="../assets/FlowerFavicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,19 +19,8 @@
     <title>makeout reef</title>
 </head>
 <body>
+    <header class="header"></header>
     <div class="contact-main-container">
-        <div class="contact-header">
-            <a href="../index.html" aria-label="home">
-                <img src="../assets/FlowerLogo.png" alt="makeout reef logo" class="contact-logo">
-            </a>
-            <nav class="contact-nav">
-                <a href="../pages/tour.html">tour</a>
-                <a href="https://makeoutreef.bigcartel.com" target="_blank">merch</a>
-                <a href="../pages/music.html">music</a>
-                <a href="../pages/contact.html">contact</a>
-            </nav>
-        </div>
-
         <div class="contact-content">
             <h1>contact</h1>
             <div class="contact-info">
@@ -45,5 +35,13 @@
             </div>
         </div>
     </div>
+
+    <script>
+        fetch('../partials/header.html')
+            .then(res => res.text())
+            .then(htmlText => {
+                document.querySelector('.header').innerHTML = htmlText;
+            })
+    </script>
 </body>
 </html>
