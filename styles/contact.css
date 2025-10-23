@@ -91,11 +91,10 @@ body::before {
 }
 
 .contact-card a {
-    color: rgb(117, 64, 117);
-    font-family: Impact, sans-serif;
-    font-size: 18px;
+    color: #d4c1d9;
+    font-family: monospace;
+    font-size: 16px;
     text-decoration: none;
-    
     transition: all 0.3s ease;
 }
 
@@ -103,12 +102,4 @@ body::before {
     color: #fff;
     text-shadow: 0 0 15px rgba(154, 120, 151, 1);
     transform: scale(1.05);
-}
-
-@media (max-width: 680px){
-    .contact-nav { gap: 16px; }
-    .contact-nav > a { font-size: 24px; }
-    .contact-content h1 { font-size: 42px; }
-    .contact-item h2 { font-size: 20px; }
-    .contact-item a { font-size: 16px; }
 }
