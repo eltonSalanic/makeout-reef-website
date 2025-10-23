@@ -4,10 +4,11 @@ body{
     background-position: center;
     background-color: #593c56;
 
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 /*Gray Overlay For Background */
@@ -27,6 +28,7 @@ body::before {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 50px;
     position: relative;
     z-index: 2;
 }
@@ -36,7 +38,6 @@ body::before {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 50px;
 }
 
 .home-logo-menu-container > img{
@@ -45,7 +46,7 @@ body::before {
 }
 
 .home-logo {
-    width: 50%;
+    width: 40%;
     height: auto;
 }
 
@@ -59,7 +60,7 @@ body::before {
     background-color: #060606;
 
     font-family: 'Rubik Burned', cursive;
-    font-size: 50px;
+    font-size: 45px;
     color: #764c30;
 
     padding: 2px 7px;
