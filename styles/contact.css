@@ -103,3 +103,13 @@ body::before {
     text-shadow: 0 0 15px rgba(154, 120, 151, 1);
     transform: scale(1.05);
 }
+
+@media(max-width: 450px){
+    body{
+        padding-bottom: 50px;
+        background-position: center;
+    }
+    .contact-content{
+        box-sizing: border-box;
+    }
+}
