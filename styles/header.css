@@ -49,3 +49,9 @@
     display: inline-block;
     transform: rotate(-5deg) !important;
 }
+
+@media(max-width: 450px){
+    .header-nav{
+        flex-wrap: wrap;
+    } 
+}

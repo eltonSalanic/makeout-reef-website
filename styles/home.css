@@ -2,7 +2,7 @@ body{
     background-image: url('../assets/StarPowerArtwork.jpeg');
     background-size: cover;
     background-position: center;
-    background-color: #593c56;
+    background-color: #211820;
 
     height: 100vh;
     display: flex;
@@ -20,21 +20,10 @@ body::before {
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
-.home-main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    position: relative;
-    z-index: 2;
+    z-index: -1;
 }
 
 .home-logo-menu-container {
-    flex: 6;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -109,4 +98,39 @@ body::before {
 
 .home-latest-release-container > h2{
     font-size: 36px;
+}
+
+@media (max-width: 450px){
+    body{
+        flex: none;
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .home-logo-menu-container{
+        height: 100vh;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .home-logo-menu-container > img{
+        width: 65%;
+    }
+
+    .home-nav{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .home-latest-release-container{
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+    }
+
+    .spotify-embed{
+        width: 80%;
+    }
 }

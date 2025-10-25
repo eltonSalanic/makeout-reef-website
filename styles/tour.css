@@ -124,7 +124,15 @@ body::before {
     box-shadow: 0 0 20px rgba(154, 120, 151, 0.8);
 }
 
-@media (max-width: 680px){
-    .show-card{ grid-template-columns: 1fr; align-items: start; }
-    .show-cta{ display: flex; gap: 10px; }
+@media (max-width: 450px){
+    body{
+        height: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .shows-window{
+        box-sizing: border-box;
+        width: 100%;
+    }
 }
