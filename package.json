@@ -1,0 +1,24 @@
+{
+  "name": "makeout-reef-website",
+  "version": "1.0.0",
+  "main": "makeout-reef-api.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eltonSalanic/makeout-reef-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eltonSalanic/makeout-reef-website/issues"
+  },
+  "homepage": "https://github.com/eltonSalanic/makeout-reef-website#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  }
+}
