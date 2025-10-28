@@ -1,6 +1,6 @@
 async function getShowsData(){
   try{
-    const response = await fetch("http://localhost:3000/get-shows");
+    const response = await fetch("https://buk2yisea7.execute-api.us-east-1.amazonaws.com/makeout-reef/shows");
     if(!response.ok){
       const errorResponse = await response.json();
       throw new Error(errorResponse); //throw error, let UI catch it
