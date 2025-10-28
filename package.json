@@ -1,10 +1,10 @@
 {
   "name": "makeout-reef-website",
   "version": "1.0.0",
-  "main": "makeout-reef-api.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build index.html --dist-dir dist"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "parcel": "^2.16.0"
   }
 }
