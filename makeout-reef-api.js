@@ -1,7 +1,9 @@
 import express from 'express';
 import dotenv from 'dotenv/config';
+import cors from 'cors';
 
 const app = express();
+app.use(cors({origin: "*"}));
 
 app.get("/get-shows", async (req, res)=>{
     const parameters = new URLSearchParams({

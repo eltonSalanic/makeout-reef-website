@@ -3,43 +3,67 @@ async function getShowsData(){
     const response = await fetch("http://localhost:3000/get-shows");
     if(!response.ok){
       const errorResponse = await response.json();
-      const errorMessage = "this is the string";
-      throw new Error(errorMessage);
+      const errorMessage = errorResponse;
+      throw new Error(errorMessage); //throw error, let UI catch it
     }
 
     const data = await response.json();
     return data;
   }catch(err){
-    console.error("Error fetching shows: ", err.message);
+    throw new Error(errorMessage);
   }
 }
 
-/*async function displayShowsData(){
-  const showsData = await getShowsData();
+async function populateShowsDataInDom(){
+  let showsData;
 
-  const showsContainer = document.querySelector('.shows-list');
+  try{
+    showsData = await getShowsData();
+  }catch(err){
+    //put error message as h2 in .shows-window
+    const showsContainer = document.querySelector('.shows-window');
+    const errorMessageElement = document.createElement('h2');
+    errorMessageElement.innerHTML = 'Could not get upcoming shows. Try again later.';
+    showsContainer.classList.add('no-upcoming-shows');
+    showsContainer.appendChild(errorMessageElement);
+    return;
+  }
 
-  showsData.forEach(show =>{
-      //format date
-      const date = new Date(show.datetime);
-      const formattedDate = date.toLocaleDateString('en-US', {
-        weekday: 'short',
-        month: 'short',
-        day: '2-digit'
-      });
-      
-      const showCard = document.createElement('div');
-      showCard.classList.add('show-card');
-      showCard.innerHTML = `
-      <div class="show-where">
-          <div class="show-city">${show.venue.location}</div>
-          <div class="show-venue">${show.venue.name}</div>
-      </div>
-      <div class="show-date">${formattedDate}</div>
-          <div class="show-cta"><a href="${show.url}">tickets</a>
-      </div>
-      `
-      showsContainer.appendChild(showCard);
-      //Fri, Nov 07
-  });
-}*/
+  console.log(showsData);
+
+  if(showsData.length === 0){
+    //put message as h2 in .shows-window
+    const showsContainer = document.querySelector('.shows-window');
+    const noUpcomingShowsElement = document.createElement('h2');
+    noUpcomingShowsElement.innerHTML = 'No upcoming shows!';
+    showsContainer.classList.add('no-upcoming-shows');
+    showsContainer.appendChild(noUpcomingShowsElement);
+  }else{
+    const showsContainer = document.querySelector('.shows-list');
+
+    showsData.forEach(show =>{
+        //format date
+        const date = new Date(show.datetime);
+        const formattedDate = date.toLocaleDateString('en-US', {
+          weekday: 'short',
+          month: 'short',
+          day: '2-digit'
+        });
+        
+        const showCard = document.createElement('div');
+        showCard.classList.add('show-card');
+        showCard.innerHTML = `
+        <div class="show-where">
+            <div class="show-city">${show.venue.location}</div>
+            <div class="show-venue">${show.venue.name}</div>
+        </div>
+        <div class="show-date">${formattedDate}</div>
+            <div class="show-cta"><a href="${show.url}">tickets</a>
+        </div>
+        `
+        showsContainer.appendChild(showCard);
+    });
+  }
+}
+
+populateShowsDataInDom();
