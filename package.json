@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build index.html --dist-dir dist"
+    "build": "parcel build index.html --dist-dir dist && cp -r partials dist/"
   },
   "repository": {
     "type": "git",
