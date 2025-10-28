@@ -3,7 +3,7 @@ import dotenv from 'dotenv/config';
 
 const app = express();
 
-app.get("/get-shows", async ()=>{
+app.get("/get-shows", async (req, res)=>{
     const parameters = new URLSearchParams({
         app_id: process.env.API_KEY
     });
@@ -12,15 +12,16 @@ app.get("/get-shows", async ()=>{
         const response = await fetch(`https://rest.bandsintown.com/artists/makeoutreef/events?${parameters}`);
 
         if (!response.ok){
-            const errorResponse = response.json();
-            const errorMessage = await errorResponse?.error || errorResponse?.message ||  `Code: ${errorResponse.status}`;
+            const errorResponse = await response.json();
+            const errorMessage = errorResponse?.error || errorResponse?.message ||  `No error message from BIT API. Error Code: ${errorResponse.status}`;
             throw new Error(errorMessage);
         }
 
         const data = await response.json();
-        return data;
+        res.json(data);
+        
       } catch (err) {
-        console.error('Failed to retrieve show data from BandsInTown Api: ', err);
+        console.error('Failed to retrieve show data from BandsInTown Api: ', err.message);
       }
 });
 
