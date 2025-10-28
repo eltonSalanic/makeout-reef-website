@@ -2,12 +2,12 @@ async function getShowsData(){
   try{
     const response = await fetch("https://buk2yisea7.execute-api.us-east-1.amazonaws.com/makeout-reef/shows");
     if(!response.ok){
-      const errorResponse = await response.json();
-      throw new Error(errorResponse); //throw error, let UI catch it
+      const parsedRes = await response.json();
+      throw new Error(parsedRes.body); //throw error, let UI catch it
     }
 
     const data = await response.json();
-    return data;
+    return data.body;
   }catch(err){
     throw new Error(errorMessage);
   }
@@ -18,6 +18,7 @@ async function populateShowsDataInDom(){
 
   try{
     showsData = await getShowsData();
+    showsData = JSON.parse(showsData);
   }catch(err){
     //put error message as h2 in .shows-window
     const showsContainer = document.querySelector('.shows-window');
