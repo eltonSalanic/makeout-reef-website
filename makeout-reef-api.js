@@ -1,3 +1,4 @@
+//this file is included for reference of deployment on lambda. it is not meant to run as the backend api server
 import express from 'express';
 import dotenv from 'dotenv/config';
 import cors from 'cors';
@@ -24,6 +25,7 @@ app.get("/get-shows", async (req, res)=>{
         
       } catch (err) {
         console.error('Failed to retrieve show data from BandsInTown Api: ', err.message);
+        res.status(500).json(err.message);
       }
 });
 

@@ -3,8 +3,7 @@ async function getShowsData(){
     const response = await fetch("http://localhost:3000/get-shows");
     if(!response.ok){
       const errorResponse = await response.json();
-      const errorMessage = errorResponse;
-      throw new Error(errorMessage); //throw error, let UI catch it
+      throw new Error(errorResponse); //throw error, let UI catch it
     }
 
     const data = await response.json();
@@ -28,8 +27,6 @@ async function populateShowsDataInDom(){
     showsContainer.appendChild(errorMessageElement);
     return;
   }
-
-  console.log(showsData);
 
   if(showsData.length === 0){
     //put message as h2 in .shows-window
