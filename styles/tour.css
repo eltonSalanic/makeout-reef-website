@@ -124,6 +124,13 @@ body::before {
     box-shadow: 0 0 20px rgba(154, 120, 151, 0.8);
 }
 
+.no-upcoming-shows{
+    color: white;
+    font-family: monospace;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width: 450px){
     body{
         height: auto;
