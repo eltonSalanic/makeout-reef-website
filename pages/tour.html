@@ -30,13 +30,6 @@
     </div>
     
     <script src="../js/retrieve-shows-data.js"></script>
-    <!-- include header contents-->
-    <script>
-        fetch('../partials/header.html')
-            .then(res => res.text())
-            .then(htmlText =>{
-                document.querySelector('.header').innerHTML = htmlText;
-            })
-    </script>
+    <script src="../js/insert-header.js"></script>
 </body>
 </html>
