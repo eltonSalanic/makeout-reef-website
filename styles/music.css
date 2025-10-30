@@ -106,6 +106,7 @@ body::before {
 @media (max-width: 450px){
     body{
         background-position: center;
+        padding-bottom: 50px;
     }
 
     .music-content{
