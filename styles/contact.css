@@ -10,6 +10,7 @@ body{
     align-items: center;
     position: relative;
     min-height: 100vh;
+    padding-bottom: 50px;
 }
 
 /* Gray Overlay For Background */

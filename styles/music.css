@@ -10,6 +10,7 @@ body{
     align-items: center;
     position: relative;
     min-height: 100vh;
+    padding-bottom: 50px;
 }
 
 /* Gray Overlay For Background */
@@ -106,7 +107,6 @@ body::before {
 @media (max-width: 450px){
     body{
         background-position: center;
-        padding-bottom: 50px;
     }
 
     .music-content{
