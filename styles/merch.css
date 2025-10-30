@@ -1,0 +1,114 @@
+body{
+    background-image: url('../assets/GroupWhiteWall.webp');
+    background-size: cover;
+    position: relative;
+    background-color: #593c56;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-bottom: 50px;
+    min-height: 100vh;
+}
+
+body::before{
+    content: '';
+    position: absolute;
+    background-color: rgb(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.merch-main-container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    z-index: 2;
+}
+
+
+
+/*Mailing Chimp Form*/
+#mailing-form-container{
+    width: 70%;
+
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(0, 0, 0, 0.5);
+    border-radius: 16px;
+    border: 1px solid rgba(154, 120, 151, 0.4);
+    box-shadow: 0 0 20px rgba(118, 65, 118, 0.422);
+
+    padding-top: 20px;
+}
+
+#mailing-form-container > h1{
+    font-size: 52px;
+    font-family: Impact;
+    color: white;
+    text-shadow: 3px 3px 5px rgb(146, 93, 150);
+}
+
+#mc_embed_signup h2{
+    margin: 0 0 12px 0;
+    font-family: monospace, cursive;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+  
+#mc_embed_signup label{
+    color: #d4c1d9;
+    font-family: monospace;
+    font-size: 14px;
+}
+  
+.mc-field-group input{
+    background: rgba(15,15,15,0.85);
+    color: #d4c1d9;
+    border: 1px solid rgba(212,193,217,0.25);
+    border-radius: 8px;
+    padding: 10px 12px;
+    outline: none;
+    transition: box-shadow .2s ease, border-color .2s ease;
+}
+  
+/* Submit button */
+#mc-embedded-subscribe{
+    background: #060606;
+    color: #764c30;
+    font-family: 'Rubik Burned', cursive;
+    font-size: 20px;
+    padding: 8px 16px;
+    border: 1px solid rgba(212,193,217,0.25);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(154,120,151,0.4);
+    cursor: pointer;
+    transition: transform .15s ease, box-shadow .2s ease, text-shadow .2s ease;
+}
+
+#mc-embedded-subscribe:hover{
+    transform: scale(1.03);
+    text-shadow: 0 0 12px rgba(154,120,151,1);
+    box-shadow: 0 0 24px rgba(154,120,151,0.75);
+}
+
+/*Footer*/
+.clear .foot{
+    display: flex;
+    flex-direction: column
+}
+
+@media(max-width: 450px){
+    #mailing-form-container{
+        width: 90%;
+    }
+}
