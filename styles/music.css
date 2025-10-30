@@ -3,7 +3,6 @@ body{
     background-size: cover;
     background-position: 0px -250px;
     background-color: #593c56;
-    background-attachment: fixed;
 
     display: flex;
     flex-direction: column;
@@ -26,6 +25,7 @@ body::before {
     pointer-events: none;
 }
 
+
 .music-main-container {
     flex: 1;
 
@@ -38,7 +38,6 @@ body::before {
     width: 100%;
     gap: 20px;
 }
-
 
 .music-content {
     width: min(950px, 92%);
@@ -102,6 +101,7 @@ body::before {
     fill: rgb(117, 64, 117);
     transition: all .3s ease;
 }
+
 
 @media (max-width: 450px){
     body{

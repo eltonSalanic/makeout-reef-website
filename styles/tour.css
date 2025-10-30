@@ -3,7 +3,6 @@ body{
     background-size: cover;
     background-position: center;
     background-color: #593c56;
-    background-attachment: fixed;
 
     display: flex;
     flex-direction: column;
