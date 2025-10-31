@@ -27,7 +27,7 @@ body::before{
     flex: 1;
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     z-index: 2;
 }
 

@@ -1,4 +1,13 @@
+import lscache from "lscache";
+
+//returns data as string
 async function getShowsData(){
+  let existingData = lscache.get('showsData');
+  if(existingData){
+    return existingData;
+  }
+
+
   try{
     const response = await fetch("https://buk2yisea7.execute-api.us-east-1.amazonaws.com/makeout-reef/shows");
     if(!response.ok){
@@ -7,6 +16,7 @@ async function getShowsData(){
     }
 
     const data = await response.json();
+    lscache.set('showsData', data.body, 60);
     return data.body;
   }catch(err){
     throw new Error(errorMessage);
