@@ -111,4 +111,9 @@ body::before{
     #mailing-form-container{
         width: 90%;
     }
+
+    body{
+        background-image: url('../assets/StairsGroupshot.webp');
+        background-position: center;
+    }
 }
