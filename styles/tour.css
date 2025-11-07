@@ -8,7 +8,7 @@ body{
     flex-direction: column;
     align-items: center;
     position: relative;
-    min-height: 100vh;
+    height: 100vh;
     padding-bottom: 50px;
 }
 
@@ -138,6 +138,12 @@ body::before {
     flex: 0;
 }
 
+/*change size to prevent BIT Mailing list form from becoming a scroll box*/
+@media (max-width: 975){
+    .bit-mailing-list{
+        min-height: 265px;
+    }
+}
 
 @media (max-width: 450px){
     body{
