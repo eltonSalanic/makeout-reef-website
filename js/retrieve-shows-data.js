@@ -1,3 +1,4 @@
+/*UNUSED*/
 import lscache from "lscache";
 
 //returns data as string

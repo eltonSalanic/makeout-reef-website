@@ -36,124 +36,58 @@ body::before {
     gap: 30px;
 }
 
+/*bands in town widget (this code was provided by the bands booking agency). It behaves really weird*/ 
 
-.shows-window {
-    width: min(950px, 92%);
-    flex: 1;
-    background: rgba(6, 6, 6, 0.6);
-    border: 1px solid rgba(154, 120, 151, 0.4);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.252);
+.bit-container { /* Outer widget wrapper with frosted glass effect */
+    position: relative;
+    max-width: 1200px;
+    width: 95%;
+    padding: 3rem 2rem;
     border-radius: 16px;
-    padding: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+
+    margin-bottom: 50px; /*it's not really obeying rules IDK why, so this is here to normalize the bottom padding*/
+  }
+
+.widget-container {
+  width: 100%;
+}
+
+.widget-background {
+    width: 100%;
+}
+
+.bit-widget-container {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    gap: 16px;
-    backdrop-filter: blur(2px);
-}
-
-.shows-window h1{
-    margin: 0;
-    color: #fff;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 52px;
-    text-shadow: 3px 3px 5px rgb(146, 93, 150);
-    text-align: center;
-}
-
-.shows-list{
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding-right: 6px;
-}
-
-/* custom scrollbar for shows list*/
-.shows-list::-webkit-scrollbar { width: 10px; }
-.shows-list::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 10px; }
-.shows-list::-webkit-scrollbar-thumb { background: rgba(154,120,151,0.5); border-radius: 10px; }
-.shows-list::-webkit-scrollbar-thumb:hover { background: rgba(154,120,151,0.8); }
-
-.show-card{
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    align-items: center;
-    gap: 14px;
-    background: rgba(0, 0, 0, 0.35);
-    border: 1px solid rgba(154, 120, 151, 0.3);
-    border-radius: 12px;
-    padding: 14px 16px;
-    color: #fff;
-}
-
-.show-where{
-    display: flex;
-    flex-direction: column;
-}
-
-.show-city{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 22px;
-    letter-spacing: 0.5px;
-}
-
-.show-venue{
-    font-family: 'BBH Sans Bogle', sans-serif;
-    opacity: 0.9;
-}
-
-.show-date{
-    font-family: 'BBH Sans Bogle', sans-serif;
-    color: #d4c1d9;
-    text-shadow: 0 0 8px rgba(154, 120, 151, 0.8);
-}
-
-.show-cta a{
-    background-color: #060606;
-    color: #764c30;
-    font-family: 'Rubik Burned', cursive;
-    text-decoration: none;
-    padding: 6px 10px;
-    border-radius: 8px;
-    box-shadow: 0 0 12px rgba(154, 120, 151, 0.5);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.show-cta a:hover{
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(154, 120, 151, 0.8);
-}
-
-.no-upcoming-shows{
-    color: white;
-    font-family: monospace;
     justify-content: center;
-    align-items: center;
 }
 
-.bit-mailing-list{
-    width: min(950px, 92%);
-    min-height: 210px;
-    max-height: 600px;
-    flex: 0;
+.bit-widget {
+  font-size: 19px !important;
 }
 
-/*change size to prevent BIT Mailing list form from becoming a scroll box*/
-@media (max-width: 975){
-    .bit-mailing-list{
-        min-height: 265px;
-    }
+.bit-widget .bit-event:hover {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.bit-container::before { /* Frosted background layer inside the container */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(125, 125, 125, 0.15); /* translucent overlay */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
+  z-index: -1;
 }
 
 @media (max-width: 450px){
     body{
-        height: auto;
         padding-left: 20px;
         padding-right: 20px;
-    }
-    
-    .shows-window{
-        box-sizing: border-box;
-        width: 100%;
+        padding-bottom: 50px;
     }
 }
