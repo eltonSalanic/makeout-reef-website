@@ -9,8 +9,11 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 100px;
 
     position: relative;
+
+    padding-bottom: 50px;
 }
 
 /*Gray Overlay For Background */
@@ -28,7 +31,9 @@ body::before {
 .home-logo-menu-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 .home-logo-menu-container > img{
@@ -71,8 +76,47 @@ body::before {
 }
 
 
+.tour-flyer-container{
+    width: 80%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.tour-flyer-container > h2{
+    flex: 1;
+
+    color: #fff;
+    font-family: 'Impact', cursive;
+    font-size: 52px;
+    text-align: center;
+    text-shadow: 5px 5px 5px rgba(11, 11, 11, 1);
+}
+
+.tour-flyer-container > a{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.tour-flyer-container img{
+    height: 100%;
+    width: auto;
+}
+
+.tour-flyer-container img:hover{
+    cursor: pointer;
+    transform: scale(1.02);
+    
+}
+
 .home-latest-release-container {
     width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -124,6 +168,17 @@ body::before {
         flex-direction: column;
         align-items: center;
         gap: 20px;
+    }
+
+    .tour-flyer-container{
+        width: 100%;
+        flex-direction: column;
+        flex-direction: column-reverse;
+        height: 400px;
+    }
+
+    .tour-flyer-container > h2{
+        font-size: 36px;
     }
 
     .home-latest-release-container{

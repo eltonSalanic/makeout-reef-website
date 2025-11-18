@@ -28,6 +28,15 @@
             <a href="pages/contact.html">contact</a>
         </nav>
     </div>
+
+    <!-- display after 9am Nov 18th -->
+    <div class="tour-flyer-container" style="display: none;">
+        <h2> Just Announced! </h2>
+        <a href="/pages/tour">
+            <img id="tour-flyer" src="assets/TourFlyerIsrael.webp" alt="Tour Flyer Israel" class="tour-flyer-image">
+        </a>
+    </div>
+
     <div class="home-latest-release-container">
         <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/4NYeFLdZrMlN2I01mzbZgU?utm_source=generator&theme=0" height="352px" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" class="spotify-embed"></iframe>
         <div class="home-latest-release-text-container">
@@ -35,5 +44,7 @@
             <p>latest release</p>
         </div>
     </div>
+
+    <script src="js/displayTourFlyer.js"></script>
 </body>
 </html>
