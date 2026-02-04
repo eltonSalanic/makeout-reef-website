@@ -14,21 +14,20 @@ a:link, a:visited {    /* normal link color */
     --loader-overlay-radius: 12px;
     --loader-overlay-blur: 6px;
     --loader-overlay-gap: 12px;
-    --loader-overlay-hide-delay: 450ms;
 }
 
-.loader-shell{
+.loader-wrapper{
     position: relative;
     isolation: isolate;
 }
 
-.loader-shell[data-loader-fade] [data-loader-target]{
+.loader-wrapper[data-loader-fade] [data-loader-target]{
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-.loader-shell[data-loader-fade].loader-shell--ready [data-loader-target]{
+.loader-wrapper[data-loader-fade].loader-wrapper--ready [data-loader-target]{
     opacity: 1;
     transform: translateY(0);
 }

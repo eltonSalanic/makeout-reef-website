@@ -1,80 +1,83 @@
 (() => {
-    const LOADER_ATTR = 'data-loader';
+    const ATTR = 'data-loader';
     const DEFAULT_EVENT = 'load';
     const HIDE_DELAY = 450;
 
-    const resolveShell = (reference) => {
+    const resolveWrapper = (reference) => {
         if (!reference) return null;
         if (reference instanceof Element) {
-            return reference.matches(`[${LOADER_ATTR}]`) ? reference : reference.closest(`[${LOADER_ATTR}]`);
+            return reference.matches(`[${ATTR}]`) ? reference : reference.closest(`[${ATTR}]`);
         }
         if (typeof reference === 'string') {
-            const node = document.querySelector(reference);
-            return node ? resolveShell(node) : null;
+            return resolveWrapper(document.querySelector(reference));
         }
         return null;
     };
 
-    const hideOverlay = (shell) => {
-        if (!shell || shell.classList.contains('loader-shell--ready')) return;
-        const overlay = shell.querySelector('.loader-overlay');
-        if (!overlay) return;
+    const pickTarget = (wrapper) => {
+        const selector = wrapper.dataset.loaderSelector;
+        if (selector) {
+            const explicit = wrapper.querySelector(selector);
+            if (explicit) return explicit;
+        }
+        return (
+            wrapper.querySelector('[data-loader-target]') ||
+            wrapper.querySelector('iframe, img, video, audio')
+        );
+    };
+
+    const isLoaded = (node) => {
+        if (!node) return false;
+        const tag = node.tagName;
+        if (tag === 'IMG') {
+            return node.complete && node.naturalWidth > 0;
+        }
+        if (tag === 'IFRAME') {
+            try {
+                return node.contentDocument?.readyState === 'complete';
+            } catch {
+                return false;
+            }
+        }
+        if (tag === 'VIDEO' || tag === 'AUDIO') {
+            return typeof node.readyState === 'number' && node.readyState >= 3;
+        }
+        return false;
+    };
+
+    const hideOverlay = (wrapper) => {
+        const overlay = wrapper?.querySelector('.loader-overlay');
+        if (!overlay || wrapper.classList.contains('loader-wrapper--ready')) return;
 
         overlay.classList.add('loader-overlay--hidden');
-        shell.classList.add('loader-shell--ready');
+        wrapper.classList.add('loader-wrapper--ready');
 
         setTimeout(() => {
             overlay.style.display = 'none';
         }, HIDE_DELAY);
     };
 
-    const isTargetLoaded = (target) => {
-        if (!target) return false;
-        const tag = target.tagName;
-        if (tag === 'IMG') {
-            return target.complete && target.naturalWidth > 0;
-        }
-        if (tag === 'IFRAME') {
-            try {
-                return target.contentDocument?.readyState === 'complete';
-            } catch {
-                return false;
-            }
-        }
-        if (tag === 'VIDEO' || tag === 'AUDIO') {
-            return typeof target.readyState === 'number' && target.readyState >= 3;
-        }
-        return false;
-    };
+    const setupWrapper = (wrapper) => {
+        if (!wrapper || wrapper.dataset.loaderReady === 'true') return;
 
-    const registerShell = (shell) => {
-        if (!shell || shell.dataset.loaderInitialized === 'true') return;
+        const overlay = wrapper.querySelector('.loader-overlay');
+        const target = pickTarget(wrapper);
+        if (!overlay || !target) return;
 
-        const overlay = shell.querySelector('.loader-overlay');
-        if (!overlay) return;
+        const eventName = target.dataset.loaderEvent || wrapper.dataset.loaderEvent || DEFAULT_EVENT;
+        const reveal = () => hideOverlay(wrapper);
 
-        const targetSelector = shell.dataset.loaderSelector;
-        const target =
-            (targetSelector ? shell.querySelector(targetSelector) : null) ||
-            shell.querySelector('[data-loader-target]') ||
-            shell.querySelector('iframe, img, video, audio');
+        target.addEventListener(eventName, reveal, { once: true });
 
-        if (!target) return;
-
-        const eventName = target.dataset.loaderEvent || shell.dataset.loaderEvent || DEFAULT_EVENT;
-        const markReady = () => hideOverlay(shell);
-
-        target.addEventListener(eventName, markReady, { once: true });
-
-        if (isTargetLoaded(target)) {
-            hideOverlay(shell);
+        if (isLoaded(target)) {
+            hideOverlay(wrapper);
         }
 
-        shell.dataset.loaderInitialized = 'true';
+        wrapper.dataset.loaderReady = 'true';
     };
 
     const initLoaders = () => {
-        document.querySelectorAll(`[${LOADER_ATTR}]`).forEach(registerShell);
+        document.querySelectorAll(`[${ATTR}]`).forEach(setupWrapper);
     };
 
     if (document.readyState === 'loading') {
@@ -84,15 +87,14 @@
     }
 
     window.LoaderOverlay = {
-        markReady(reference) {
-            const shell = resolveShell(reference);
-            if (shell) {
-                hideOverlay(shell);
-            }
+        hide(reference) {
+            const wrapper = resolveWrapper(reference);
+            if (wrapper) hideOverlay(wrapper);
+        },
+        refresh() {
+            initLoaders();
         },
     };
 
-    window.onVideoEmbedLoad = () => {
-        window.LoaderOverlay.markReady('#video-loader');
-    };
+    window.onVideoEmbedLoad = () => window.LoaderOverlay.hide('#video-loader');
 })();
