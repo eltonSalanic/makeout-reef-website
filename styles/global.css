@@ -6,4 +6,34 @@
 a:link, a:visited {    /* normal link color */
     color: inherit;
     text-decoration: none; /* optional */
-  }
+}
+
+/* Spotify Loader Styles */
+.spotify-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 352px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 10;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
