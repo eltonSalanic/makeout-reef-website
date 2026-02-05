@@ -54,7 +54,6 @@ body::before{
     font-size: 52px;
     font-family: var(--font-main);
     color: var(--color-text-main);
-    text-shadow: 3px 3px 5px rgb(146, 93, 150);
 }
 
 #mc_embed_signup h2{
@@ -92,13 +91,11 @@ body::before{
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(154,120,151,0.4);
     cursor: pointer;
-    transition: transform .15s ease, box-shadow .2s ease, text-shadow .2s ease;
+    transition: transform .15s ease;
 }
 
 #mc-embedded-subscribe:hover{
     transform: scale(1.03);
-    text-shadow: 0 0 12px rgba(154,120,151,1);
-    box-shadow: 0 0 24px rgba(154,120,151,0.75);
 }
 
 /*Footer*/
