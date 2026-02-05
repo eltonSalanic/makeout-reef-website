@@ -17,7 +17,7 @@ a:link, a:visited {    /* normal link color */
 :root {
     --font-main: Helvetica, Arial, sans-serif;
     --font-secondary: Georgia, "Times New Roman", serif;
-    --color-text-main: #ffffff;
+    --color-text-main: #ededed;
     --color-text-secondary: #b0b0b0;
 }
 
