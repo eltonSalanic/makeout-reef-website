@@ -3,9 +3,22 @@
     padding: 0;
 }
 
+body {
+    font-family: var(--font-main);
+    color: var(--color-text-main);
+}
+
 a:link, a:visited {    /* normal link color */
     color: inherit;
     text-decoration: none; /* optional */
+}
+
+/* Typography & color */
+:root {
+    --font-main: Helvetica, Arial, sans-serif;
+    --font-secondary: Georgia, "Times New Roman", serif;
+    --color-text-main: #ededed;
+    --color-text-secondary: #b0b0b0;
 }
 
 /* Loader Overlay */
@@ -45,7 +58,7 @@ a:link, a:visited {    /* normal link color */
     transition: opacity 0.35s ease;
     z-index: 10;
     backdrop-filter: blur(var(--loader-overlay-blur));
-    color: #fff;
+    color: var(--color-text-main);
     text-align: center;
 }
 
@@ -63,7 +76,7 @@ a:link, a:visited {    /* normal link color */
 }
 
 .loader-overlay__text{
-    font-family: 'Rubik Burned', cursive;
+    font-family: var(--font-main);
     letter-spacing: 2px;
     text-transform: uppercase;
     font-size: 0.9rem;

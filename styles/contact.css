@@ -55,10 +55,9 @@ body::before {
 
 .contact-content h1{
     margin: 0;
-    color: #fff;
-    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    color: var(--color-text-main);
+    font-family: var(--font-main);
     font-size: 52px;
-    text-shadow: 3px 3px 5px rgb(146, 93, 150);
     text-align: center;
 }
 
@@ -82,24 +81,22 @@ body::before {
 }
 
 .contact-card h2 {
-    color: #fff;
-    font-family: Impact, sans-serif;
+    color: var(--color-text-main);
+    font-family: var(--font-main);
     font-size: 24px;
-    text-shadow: 2px 2px 4px rgb(146, 93, 150);
     margin: 0;
 }
 
 .contact-card a {
-    color: #d4c1d9;
-    font-family: monospace;
+    color: var(--color-text-secondary);
+    font-family: var(--font-secondary);
     font-size: 16px;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .contact-card a:hover {
-    color: #fff;
-    text-shadow: 0 0 15px rgba(154, 120, 151, 1);
+    color: var(--color-text-main);
     transform: scale(1.05);
 }
 
