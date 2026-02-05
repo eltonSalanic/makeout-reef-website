@@ -59,7 +59,11 @@ body::before {
 
 .home-nav a:nth-child(even){
     display: inline-block;
-    transform: rotate(5deg) !important;
+    transform: rotate(5deg);
+}
+
+.home-nav a:nth-child(even):hover {
+    transform: rotate(5deg) scale(1.05);
 }
 
 
