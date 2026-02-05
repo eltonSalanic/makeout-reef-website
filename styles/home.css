@@ -1,8 +1,6 @@
 body{
-    background-image: url('../assets/StarPowerArtwork.webp');
-    background-size: cover;
-    background-position: center;
-    background-color: #211820;
+    background-color: #000;
+    background-image: none;
 
     min-height: 100vh;
     display: flex;
@@ -18,14 +16,7 @@ body{
 
 /*Gray Overlay For Background */
 body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
+    content: none;
 }
 
 .home-logo-menu-container {
@@ -38,7 +29,6 @@ body::before {
 
 .home-logo-menu-container > img{
     margin-bottom: 30px;
-    filter: drop-shadow(0 0 2px rgba(218, 203, 222, 0.6));
 }
 
 .home-logo {
@@ -47,7 +37,7 @@ body::before {
 }
 
 .home-nav{
-    width: 100%;
+    width: 50%;
     display: flex;
     justify-content: space-evenly;
 }
@@ -55,9 +45,9 @@ body::before {
 .home-nav > a{
     background-color: #060606;
 
-    font-family: 'Rubik Burned', cursive;
+    font-family: var(--font-main);
     font-size: 45px;
-    color: #764c30;
+    color: var(--color-text-main);
 
     padding: 2px 7px;
     box-shadow: 0 0 15px rgba(154, 120, 151, 0.4);
@@ -88,8 +78,8 @@ body::before {
 .tour-flyer-container > h2{
     flex: 1;
 
-    color: #fff;
-    font-family: 'Impact', cursive;
+    color: var(--color-text-main);
+    font-family: var(--font-main);
     font-size: 52px;
     text-align: center;
     text-shadow: 5px 5px 5px rgba(11, 11, 11, 1);
@@ -155,17 +145,17 @@ body::before {
 }
 
 .home-latest-release-text-container > h2 {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: var(--font-main);
     font-size: 52px;
     
-    color: #fff;
+    color: var(--color-text-main);
     text-shadow: 3px 3px 5px rgb(146, 93, 150);
 }
 
 .home-latest-release-text-container > p {
-    font-family: 'Rubik Burned', cursive;
+    font-family: var(--font-secondary);
     font-size: 24px;
-    color: #764c30;
+    color: var(--color-text-secondary);
 }
 
 .home-latest-release-container > h2{

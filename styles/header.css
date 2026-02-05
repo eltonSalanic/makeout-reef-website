@@ -24,9 +24,9 @@
 .header-nav > a{
     background-color: #060606;
 
-    font-family: 'Rubik Burned', cursive;
+    font-family: var(--font-main);
     font-size: 28px;
-    color: #764c30;
+    color: var(--color-text-main);
 
     padding: 2px 10px;
     box-shadow: 0 0 15px rgba(154, 120, 151, 0.4);

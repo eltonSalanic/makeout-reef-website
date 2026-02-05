@@ -52,28 +52,28 @@ body::before{
 
 #mailing-form-container > h1{
     font-size: 52px;
-    font-family: Impact;
-    color: white;
+    font-family: var(--font-main);
+    color: var(--color-text-main);
     text-shadow: 3px 3px 5px rgb(146, 93, 150);
 }
 
 #mc_embed_signup h2{
     margin: 0 0 12px 0;
-    font-family: monospace, cursive;
+    font-family: var(--font-secondary);
     font-size: 20px;
-    color: white;
+    color: var(--color-text-secondary);
     text-align: center;
 }
   
 #mc_embed_signup label{
-    color: #d4c1d9;
-    font-family: monospace;
+    color: var(--color-text-secondary);
+    font-family: var(--font-secondary);
     font-size: 14px;
 }
   
 .mc-field-group input{
     background: rgba(15,15,15,0.85);
-    color: #d4c1d9;
+    color: var(--color-text-secondary);
     border: 1px solid rgba(212,193,217,0.25);
     border-radius: 8px;
     padding: 10px 12px;
@@ -84,8 +84,8 @@ body::before{
 /* Submit button */
 #mc-embedded-subscribe{
     background: #060606;
-    color: #764c30;
-    font-family: 'Rubik Burned', cursive;
+    color: var(--color-text-main);
+    font-family: var(--font-main);
     font-size: 20px;
     padding: 8px 16px;
     border: 1px solid rgba(212,193,217,0.25);
