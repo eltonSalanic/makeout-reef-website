@@ -1,6 +1,9 @@
 body{
     background-color: #000;
-    background-image: none;
+    background-image: url('../assets/PurpleTree.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 
     min-height: 100vh;
     display: flex;
@@ -14,9 +17,17 @@ body{
     padding-bottom: 50px;
 }
 
-/*Gray Overlay For Background */
+/* Grey transparent overlay */
 body::before {
-    content: none;
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -10;
+    pointer-events: none;
 }
 
 .home-logo-menu-container {
