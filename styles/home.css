@@ -178,6 +178,21 @@ body::before {
         width: 100%;
         height: auto;
         position: relative;
+        background-attachment: scroll;
+    }
+    
+    body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('../assets/PurpleTree.png');
+        background-size: cover;
+        background-position: center;
+        z-index: -2;
+        pointer-events: none;
     }
 
     .home-logo-menu-container{
@@ -214,6 +229,14 @@ body::before {
         gap: 30px;
         padding: 0 20px;
         text-align: center;
+    }
+    
+    .home-latest-release-text-container > h2 {
+        font-size: 36px;
+    }
+
+    .home-latest-release-text-container > p {
+        font-size: 24px;
     }
 
     .video-wrapper{
