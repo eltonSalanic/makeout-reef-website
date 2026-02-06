@@ -55,8 +55,8 @@ body::before {
 
 .home-nav > a{
     background-color: #060606;
-
-    font-family: var(--font-main);
+    font-family: 'Rubik Burned', cursive;
+    color: #764c30;
     font-size: 45px;
     color: var(--color-text-main);
 

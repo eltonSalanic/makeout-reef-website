@@ -23,8 +23,7 @@
 
 .header-nav > a{
     background-color: #060606;
-
-    font-family: var(--font-main);
+    font-family: 'Rubik Burned', cursive;
     font-size: 28px;
     color: var(--color-text-main);
 
