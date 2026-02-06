@@ -56,6 +56,12 @@
 
 @media(max-width: 450px){
     .header-nav{
-        flex-wrap: wrap;
-    } 
+        flex-wrap: nowrap;
+        gap: 12px;
+    }
+    
+    .header-nav > a{
+        font-size: 22px;
+        padding: 2px 6px;
+    }
 }
