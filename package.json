@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "parcel index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build index.html --dist-dir dist"
+    "build": "parcel build index.html tour.html music.html contact.html merch.html --dist-dir dist"
   },
   "repository": {
     "type": "git",
