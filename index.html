@@ -30,11 +30,37 @@
     </div>
 
     <!-- display after 9am Nov 18th -->
-    <div class="tour-flyer-container" style="display: none;">
+    <!-- display after 9am Nov 18th -->
+    <div class="tour-flyer-carousel-section" style="display: none;">
         <h2> Happening Now! </h2>
-        <a href="/tour.html">
-            <img id="tour-flyer" src="assets/summerTourFlyer.webp" alt="Tour Flyer Israel" class="tour-flyer-image">
-        </a>
+        <div class="carousel-container">
+            <div class="carousel-track-container">
+                <ul class="carousel-track">
+                    <li class="carousel-slide current-slide">
+                        <a href="/tour">
+                            <img src="assets/summerTourFlyer.webp" alt="Summer Tour Flyer" class="tour-flyer-image">
+                        </a>
+                    </li>
+                    <li class="carousel-slide">
+                        <a href="/tour">
+                            <img src="assets/winterTourFlyer.webp" alt="Winter Tour Flyer" class="tour-flyer-image">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <button class="carousel-button carousel-button--left" id="prev-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="carousel-button carousel-button--right" id="next-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+
+            <div class="carousel-dots">
+                <button class="carousel-dot active"></button>
+                <button class="carousel-dot"></button>
+            </div>
+        </div>
     </div>
 
     <div class="home-latest-release-container">
@@ -68,5 +94,6 @@
 
     <script src="js/loader.js"></script>
     <script src="js/displayTourFlyer.js"></script>
+    <script src="js/home-carousel.js"></script>
 </body>
 </html>

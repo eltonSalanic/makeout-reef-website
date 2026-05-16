@@ -7,7 +7,7 @@ function showFlyer(displayTime, flyerContainer, interval){
 }
 
 const displayTime = new Date('2026-03-25T10:00:00');
-const flyerContainer = document.querySelector('.tour-flyer-container');
+const flyerContainer = document.querySelector('.tour-flyer-carousel-section');
 if(displayTime < new Date()){
   flyerContainer.style.display='flex';
 }else{
