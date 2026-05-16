@@ -36,16 +36,7 @@
         <div class="carousel-container">
             <div class="carousel-track-container">
                 <ul class="carousel-track">
-                    <li class="carousel-slide current-slide">
-                        <a href="/tour">
-                            <img src="assets/summerTourFlyer.webp" alt="Summer Tour Flyer" class="tour-flyer-image">
-                        </a>
-                    </li>
-                    <li class="carousel-slide">
-                        <a href="/tour">
-                            <img src="assets/winterTourFlyer.webp" alt="Winter Tour Flyer" class="tour-flyer-image">
-                        </a>
-                    </li>
+                    <!-- Dynamic flyers will be injected here by home-carousel.js -->
                 </ul>
             </div>
             
@@ -57,8 +48,7 @@
             </button>
 
             <div class="carousel-dots">
-                <button class="carousel-dot active"></button>
-                <button class="carousel-dot"></button>
+                <!-- Dynamic dots will be injected here by home-carousel.js -->
             </div>
         </div>
     </div>
@@ -92,8 +82,8 @@
         </div>
     </div>
 
-    <script src="js/loader.js"></script>
-    <script src="js/displayTourFlyer.js"></script>
-    <script src="js/home-carousel.js"></script>
+    <script type="module" src="js/loader.js"></script>
+    <script type="module" src="js/displayTourFlyer.js"></script>
+    <script type="module" src="js/home-carousel.js"></script>
 </body>
 </html>

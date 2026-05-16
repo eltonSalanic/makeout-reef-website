@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "parcel index.html",
+    "dev": "parcel index.html tour.html music.html contact.html merch.html",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "parcel build index.html tour.html music.html contact.html merch.html --dist-dir dist"
   },
@@ -23,7 +23,10 @@
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "lscache": "^1.3.2",
-    "parcel": "^2.16.0",
+    "parcel": "^2.16.4",
     "posthtml-include": "^2.0.1"
+  },
+  "devDependencies": {
+    "@parcel/resolver-glob": "^2.16.4"
   }
 }

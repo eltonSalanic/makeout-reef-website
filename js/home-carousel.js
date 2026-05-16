@@ -1,15 +1,59 @@
+import flyerImages from 'url:../assets/flyers/*.webp';
+
 function initHomeCarousel() {
+    console.log('Flyer Images Glob Raw:', flyerImages);
+    
     const track = document.querySelector('.carousel-track');
+    const dotsNav = document.querySelector('.carousel-dots');
+    
+    // Clear existing hardcoded content
+    track.innerHTML = '';
+    dotsNav.innerHTML = '';
+
+    // Recursively find strings in the glob object
+    const findUrls = (obj) => {
+        let urls = [];
+        for (const key in obj) {
+            if (typeof obj[key] === 'string') {
+                urls.push(obj[key]);
+            } else if (typeof obj[key] === 'object' && obj[key] !== null) {
+                urls = urls.concat(findUrls(obj[key]));
+            }
+        }
+        return urls;
+    };
+
+    const flyerUrls = findUrls(flyerImages);
+    console.log('Detected Flyer URLs:', flyerUrls);
+    
+    if (flyerUrls.length === 0) return;
+
+    // Build slides and dots dynamically
+    flyerUrls.forEach((url, index) => {
+        // Create Slide
+        const li = document.createElement('li');
+        li.className = `carousel-slide ${index === 0 ? 'current-slide' : ''}`;
+        li.innerHTML = `
+            <a href="/tour.html">
+                <img src="${url}" alt="Tour Flyer" class="tour-flyer-image">
+            </a>
+        `;
+        track.appendChild(li);
+
+        // Create Dot
+        const dot = document.createElement('button');
+        dot.className = `carousel-dot ${index === 0 ? 'active' : ''}`;
+        dotsNav.appendChild(dot);
+    });
+
     const slides = Array.from(track.children);
     const nextButton = document.getElementById('next-btn');
     const prevButton = document.getElementById('prev-btn');
-    const dotsNav = document.querySelector('.carousel-dots');
     const dots = Array.from(dotsNav.children);
 
     let currentIndex = 0;
 
     const updateCarousel = (index) => {
-        // Loop back to start/end
         if (index < 0) index = slides.length - 1;
         if (index >= slides.length) index = 0;
 
@@ -27,26 +71,18 @@ function initHomeCarousel() {
         currentIndex = index;
     };
 
-    nextButton.addEventListener('click', () => {
-        updateCarousel(currentIndex + 1);
-    });
-
-    prevButton.addEventListener('click', () => {
-        updateCarousel(currentIndex - 1);
-    });
+    nextButton.addEventListener('click', () => updateCarousel(currentIndex + 1));
+    prevButton.addEventListener('click', () => updateCarousel(currentIndex - 1));
 
     dotsNav.addEventListener('click', e => {
         const targetDot = e.target.closest('button');
         if (!targetDot) return;
-
         const targetIndex = dots.indexOf(targetDot);
         updateCarousel(targetIndex);
     });
 
-    // Auto play (optional, every 5 seconds)
-    setInterval(() => {
-        updateCarousel(currentIndex + 1);
-    }, 5000);
+    setInterval(() => updateCarousel(currentIndex + 1), 5000);
 }
 
 document.addEventListener('DOMContentLoaded', initHomeCarousel);
+
