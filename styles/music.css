@@ -1,8 +1,15 @@
 body{
-    background-image: url('../assets/BalloonStageShot.webp');
-    background-size: cover;
-    background-position: 0px -250px;
-    background-color: #593c56;
+    /* The grey overlay is the first background layer rather than a positioned
+       element, so it always covers exactly what the image covers. A fixed
+       element stops at the layout viewport, which left the image undimmed
+       behind the iOS notch and the Safari toolbar. */
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../assets/BalloonStageShot.webp');
+    background-size: auto, cover;
+    background-position: 0 0, 0px -250px;
+    /* Pre-dimmed so the safe areas match even where only the colour shows. */
+    background-color: #2c1e2b;
 
     display: flex;
     flex-direction: column;
@@ -12,20 +19,6 @@ body{
     min-height: 100vh;
     padding-bottom: 50px;
 }
-
-/* Gray Overlay For Background */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    pointer-events: none;
-}
-
 
 .music-main-container {
     flex: 1;
@@ -108,7 +101,7 @@ body::before {
 
 @media (max-width: 450px){
     body{
-        background-position: center;
+        background-position: 0 0, center;
     }
 
     .music-content{

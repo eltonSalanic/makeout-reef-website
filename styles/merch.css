@@ -1,8 +1,11 @@
 body{
-    background-image: url('../assets/GroupWhiteWall.webp');
-    background-size: cover;
+    /* Overlay lives in the background stack — see music.css for why. */
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('../assets/GroupWhiteWall.webp');
+    background-size: auto, cover;
     position: relative;
-    background-color: #593c56;
+    background-color: #241822;
     z-index: 2;
 
     display: flex;
@@ -10,17 +13,6 @@ body{
 
     padding-bottom: 50px;
     min-height: 100vh;
-}
-
-body::before{
-    content: '';
-    position: absolute;
-    background-color: rgb(0, 0, 0, 0.6);
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
 }
 
 .merch-main-container{
@@ -110,7 +102,11 @@ body::before{
     }
 
     body{
-        background-image: url('../assets/StairsGroupshot.webp');
+        /* Must re-declare the overlay layer, or overriding background-image
+           here would drop it. */
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+            url('../assets/StairsGroupshot.webp');
         background-position: center;
     }
 }

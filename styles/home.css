@@ -1,9 +1,9 @@
 body{
     background-color: #000;
-    background-image: url('../assets/PurpleTree.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+
+    /* The background image is painted by body::after, not here. iOS Safari
+       mishandles background-attachment: fixed, and painting it in both places
+       produced two copies at different scales that seamed against each other. */
 
     min-height: 100vh;
     display: flex;
@@ -17,16 +17,25 @@ body{
     padding-bottom: 50px;
 }
 
-/* Grey transparent overlay */
+/* Fixed background image layer */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url('../assets/PurpleTree.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+    pointer-events: none;
+}
+
+/* Grey transparent overlay — z-index must stay above body::after */
 body::before {
     content: '';
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background-color: rgba(0, 0, 0, 0.4);
-    z-index: -10;
+    z-index: -1;
     pointer-events: none;
 }
 
@@ -309,21 +318,6 @@ body::before {
         width: 100%;
         height: auto;
         position: relative;
-        background-attachment: scroll;
-    }
-    
-    body::after {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: url('../assets/PurpleTree.png');
-        background-size: cover;
-        background-position: center;
-        z-index: -2;
-        pointer-events: none;
     }
 
     .home-logo-menu-container{
