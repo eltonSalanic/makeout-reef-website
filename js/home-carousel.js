@@ -28,6 +28,15 @@ function initHomeCarousel() {
     
     if (flyerUrls.length === 0) return;
 
+    const carouselContainer = document.querySelector('.carousel-container');
+    const nextButton = document.getElementById('next-btn');
+    const prevButton = document.getElementById('prev-btn');
+    const hasMultipleFlyers = flyerUrls.length > 1;
+
+    if (hasMultipleFlyers) {
+        carouselContainer.classList.add('carousel-container--multiple');
+    }
+
     // Build slides and dots dynamically
     flyerUrls.forEach((url, index) => {
         // Create Slide
@@ -40,20 +49,21 @@ function initHomeCarousel() {
         `;
         track.appendChild(li);
 
-        // Create Dot
-        const dot = document.createElement('button');
-        dot.className = `carousel-dot ${index === 0 ? 'active' : ''}`;
-        dotsNav.appendChild(dot);
+        if (hasMultipleFlyers) {
+            const dot = document.createElement('button');
+            dot.className = `carousel-dot ${index === 0 ? 'active' : ''}`;
+            dotsNav.appendChild(dot);
+        }
     });
 
     const slides = Array.from(track.children);
-    const nextButton = document.getElementById('next-btn');
-    const prevButton = document.getElementById('prev-btn');
     const dots = Array.from(dotsNav.children);
 
     let currentIndex = 0;
 
     const updateCarousel = (index) => {
+        if (!hasMultipleFlyers) return;
+
         if (index < 0) index = slides.length - 1;
         if (index >= slides.length) index = 0;
 
@@ -65,23 +75,27 @@ function initHomeCarousel() {
         currentSlide.classList.remove('current-slide');
         targetSlide.classList.add('current-slide');
 
-        currentDot.classList.remove('active');
-        targetDot.classList.add('active');
+        if (currentDot && targetDot) {
+            currentDot.classList.remove('active');
+            targetDot.classList.add('active');
+        }
 
         currentIndex = index;
     };
 
-    nextButton.addEventListener('click', () => updateCarousel(currentIndex + 1));
-    prevButton.addEventListener('click', () => updateCarousel(currentIndex - 1));
+    if (hasMultipleFlyers) {
+        nextButton.addEventListener('click', () => updateCarousel(currentIndex + 1));
+        prevButton.addEventListener('click', () => updateCarousel(currentIndex - 1));
 
-    dotsNav.addEventListener('click', e => {
-        const targetDot = e.target.closest('button');
-        if (!targetDot) return;
-        const targetIndex = dots.indexOf(targetDot);
-        updateCarousel(targetIndex);
-    });
+        dotsNav.addEventListener('click', e => {
+            const targetDot = e.target.closest('button');
+            if (!targetDot) return;
+            const targetIndex = dots.indexOf(targetDot);
+            updateCarousel(targetIndex);
+        });
 
-    setInterval(() => updateCarousel(currentIndex + 1), 5000);
+        setInterval(() => updateCarousel(currentIndex + 1), 5000);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', initHomeCarousel);
