@@ -5,10 +5,38 @@ function initHomeCarousel() {
     
     const track = document.querySelector('.carousel-track');
     const dotsNav = document.querySelector('.carousel-dots');
-    
+    const trackContainer = document.querySelector('.carousel-track-container');
+    const carouselContainer = document.querySelector('.carousel-container');
+
     // Clear existing hardcoded content
     track.innerHTML = '';
     dotsNav.innerHTML = '';
+
+    const syncCarouselHeight = () => {
+        const currentSlide = track.querySelector('.current-slide');
+        if (!currentSlide) return;
+
+        const img = currentSlide.querySelector('.tour-flyer-image');
+        if (!img?.naturalWidth) return;
+
+        const containerWidth = carouselContainer.clientWidth;
+        const height = containerWidth * (img.naturalHeight / img.naturalWidth);
+        trackContainer.style.height = `${height}px`;
+    };
+
+    const bindImageLoad = (img) => {
+        const onReady = () => {
+            if (img.closest('.current-slide')) {
+                syncCarouselHeight();
+            }
+        };
+
+        if (img.complete) {
+            onReady();
+        } else {
+            img.addEventListener('load', onReady);
+        }
+    };
 
     // Recursively find strings in the glob object
     const findUrls = (obj) => {
@@ -28,7 +56,6 @@ function initHomeCarousel() {
     
     if (flyerUrls.length === 0) return;
 
-    const carouselContainer = document.querySelector('.carousel-container');
     const nextButton = document.getElementById('next-btn');
     const prevButton = document.getElementById('prev-btn');
     const hasMultipleFlyers = flyerUrls.length > 1;
@@ -48,6 +75,7 @@ function initHomeCarousel() {
             </a>
         `;
         track.appendChild(li);
+        bindImageLoad(li.querySelector('.tour-flyer-image'));
 
         if (hasMultipleFlyers) {
             const dot = document.createElement('button');
@@ -81,7 +109,15 @@ function initHomeCarousel() {
         }
 
         currentIndex = index;
+        syncCarouselHeight();
     };
+
+    window.addEventListener('resize', syncCarouselHeight);
+
+    if (window.ResizeObserver) {
+        const resizeObserver = new ResizeObserver(() => syncCarouselHeight());
+        resizeObserver.observe(carouselContainer);
+    }
 
     if (hasMultipleFlyers) {
         nextButton.addEventListener('click', () => updateCarousel(currentIndex + 1));
